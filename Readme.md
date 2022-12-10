@@ -9,7 +9,7 @@ This app generates:
 - Basic SystemVerilog code that implements the truth table
 
 Inputs: Write up to 4 input labels separated by commas
-Outputs: Write up to 2 inputs labels separated by commas
+Outputs: Write up to 2 outputs labels separated by commas
 
 - Select Minterms
 - Toggle "Don't care" button and select don't care terms if neded 

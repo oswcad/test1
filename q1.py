@@ -268,6 +268,20 @@ title = '<p style="font-family:verdana; color:#ff1010; font-size: 36px;"><b>EEE_
 st.markdown(hide_menu, unsafe_allow_html=True)
 st.markdown(title, unsafe_allow_html=True)
 
+help = st.sidebar.expander("How to use")
+help.write("""
+Inputs: Write *up to 4 input* labels separated by commas
+
+Outputs: Write *up to 2 output* labels separated by commas
+
+- Select Minterms
+- Toggle "Don't care" button and select don't care terms if neded 
+
+Submit: Press to build the table
+
+Reset: Start all over 
+""")
+
 st.sidebar.write('Truth table variables')
 
 def clear_form():
