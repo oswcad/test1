@@ -1,0 +1,3 @@
+sympy
+Jinja2
+schemdraw
