@@ -9,6 +9,22 @@ from schemdraw.parsing import logicparse
 import re
 from jinja2 import Template
 
+hide_menu = """
+<style>
+#MainMenu {
+    visibility: hidden;
+}
+footer {
+    visibility: visible;
+}
+footer:after{
+    content:"By: Oswaldo Cadenas, 2022";
+    display: block;
+    position: relative;
+    color: tomato;
+}
+</style>
+"""
 
 # Useful template to generate SystemVerilog code 
 # requires the input and output labels
@@ -249,6 +265,7 @@ class TruthTable:
 st.sidebar.image('LSBU_2020_BO.png', width=140)
 # st.title('EEE_4_DLD: Combinational Logic')
 title = '<p style="font-family:verdana; color:#ff1010; font-size: 36px;"><b>EEE_4_DLD: Combinational Logic</b></p>'
+st.markdown(hide_menu, unsafe_allow_html=True)
 st.markdown(title, unsafe_allow_html=True)
 
 st.sidebar.write('Truth table variables')
