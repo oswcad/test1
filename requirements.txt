@@ -1,3 +1,4 @@
+pyparsing
 sympy
 Jinja2
 schemdraw
