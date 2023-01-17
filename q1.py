@@ -364,9 +364,9 @@ if (m >= 1) and (outputs[0] != ''):
 
 if (m >= 1) and (outputs[0] != ''):
     with tab1:
+        st.write('Truth table')
+        st.dataframe(mytable.get_tt())
         if st.session_state.submit_boolean:
-            st.write('Truth table')
-            st.dataframe(mytable.get_tt())
             st.write('Sum-of-Products of minterms')
             for ol in mytable.onames:
                 leq = ol + ' = ' + totex(mytable.SOP(ol))
