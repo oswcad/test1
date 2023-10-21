@@ -209,9 +209,9 @@ class TruthTable:
         expr = ""
         if self.i > 1:
             for m in minterms[0:-1]:
-                expr += repr(sp.SOPform([sp.symbols(lstr)], [m]))
+                expr += repr(sp.SOPform(sp.symbols(lstr), [m]))
                 expr += " + "
-            expr += repr(sp.SOPform([sp.symbols(lstr)], [minterms[-1]]))
+            expr += repr(sp.SOPform(sp.symbols(lstr), [minterms[-1]]))
         else:
             expr += repr(sp.SOPform([sp.symbols(lstr)], [minterms[0]]))
         return expr
@@ -226,7 +226,10 @@ class TruthTable:
                 lstr += v
                 lstr += " "
             lstr = lstr.strip()
-            expr = repr(sp.SOPform([sp.symbols(lstr)], minterms, dontcares))
+            if self.i > 1:
+                expr = repr(sp.SOPform(sp.symbols(lstr), minterms, dontcares))
+            else:
+                expr = repr(sp.SOPform([sp.symbols(lstr)], minterms, dontcares))
             # texexpr = name + '=' + totex(expr)
         else:
             print("Output name '{}' is not in table".format(name))
